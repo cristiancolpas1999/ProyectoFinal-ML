@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Modelos mixtos para evaluar la presencia o nivel de Alzheimer en un paciente &#8212; Proyecto Final ML</title>
+    <title>Modelos hibridos para evaluar la presencia del Alzheimer en un paciente &#8212; Proyecto Final ML</title>
   
   
   
@@ -150,7 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Modelos mixtos para evaluar la presencia o nivel de Alzheimer en un paciente
+                    Modelos hibridos para evaluar la presencia del Alzheimer en un paciente
                 </a>
             </li>
         </ul>
@@ -336,7 +336,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Modelos mixtos para evaluar la presencia o nivel de Alzheimer en un paciente</h1>
+    <h1>Modelos hibridos para evaluar la presencia del Alzheimer en un paciente</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -346,9 +346,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modelos mixtos para evaluar la presencia o nivel de Alzheimer en un paciente</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modelos hibridos para evaluar la presencia del Alzheimer en un paciente</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-grafico-del-modelo">Resumen grafico del modelo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importacion-de-librerias">Importación de librerías</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizacion-de-la-red">optimizacion de la red</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento-de-datos-para-su-preprocesamiento">Entrenamiento de datos para su preprocesamiento</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#union-del-nuevo-dataset">Union del nuevo Dataset</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-de-modelos">Aplicacion de modelos</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#svm">SVM</a></li>
@@ -356,7 +359,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn">KNN</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">CONCLUSIÓN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
 </ul>
 </li>
 </ul>
@@ -371,11 +374,35 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="modelos-mixtos-para-evaluar-la-presencia-o-nivel-de-alzheimer-en-un-paciente">
-<h1>Modelos mixtos para evaluar la presencia o nivel de Alzheimer en un paciente<a class="headerlink" href="#modelos-mixtos-para-evaluar-la-presencia-o-nivel-de-alzheimer-en-un-paciente" title="Permalink to this heading">#</a></h1>
-<p>Presentado por: Bolivar Daniel y Cristian Colpas</p>
-<p>El Alzheimer es una enfermedad es una enfermedad insidiosa y progresiva que afecta funciones sociales, emocionales y pedagógicas en el ser humano, siendo el tipo de demencia senil más común que existe. Debido a que la etiología y la patogénesis del Alzheimer no se han detectado una manera 100% segura de evitarla, con solo posibilidades para que surja esta enfermedad, por ende es importante su pronta detección para lograr un tratamiento temprano y adecuado en aquellas personas que padecen esta enfermedad, por lo cual en el siguiente proyecto presentamos un modelo de clasificación con el fin de poder detectar el Alzheimer en aquellas personas que padecen. En este proyecto se utilizó un dataset de 6400 muestras, 6400 imágenes de resonancia magnética (IRM) dividida en 4 categorías pero que se encontraba sumamente desbalanceada, debido a esto se creó un modelo mixto de tres partes en el cual se utiliza PCA y CNN para balancear los datos y se utilizó modelos como KNN, naive bayes, svm y xgboost para poder demostrar su rendimiento.</p>
-<p>Importación de librerías</p>
+  <section id="modelos-hibridos-para-evaluar-la-presencia-del-alzheimer-en-un-paciente">
+<h1>Modelos hibridos para evaluar la presencia del Alzheimer en un paciente<a class="headerlink" href="#modelos-hibridos-para-evaluar-la-presencia-del-alzheimer-en-un-paciente" title="Permalink to this heading">#</a></h1>
+<p>Presentado por: Cristian Colpas y Daniel Bolivar</p>
+<p>El Alzheimer es una enfermedad es una enfermedad insidiosa y progresiva que afecta funciones sociales, emocionales y pedagógicas en el ser humano, siendo el tipo de demencia senil más común que existe. Debido a que la etiología y la patogénesis del Alzheimer no se han detectado una manera 100% segura de evitarla, por lo cual en cierta medida es hasta necesario y mejor cometer un falso positivo y darse cuenta si una persona no tiene esta enfermedad que no identificar bien el nivel de gravedad de los enfermos pues estos ya padecen de la enfermedad, por ende, es importante su pronta detección para lograr un tratamiento temprano y adecuado en aquellas personas que padecen esta enfermedad. En el siguiente proyecto presentamos un modelo de clasificación con el fin de poder detectar el Alzheimer en aquellas personas que lo padecen o no lo padecen. En este proyecto se utilizó un data set de 6400 muestras, 6400 imágenes de resonancia magnética (IRM) dividida en 4 categorías pero que se convirtió en 2 categorías para que esta se encontrara balanceada, debido a esto se creó un modelo hibrido de tres partes en el cual se utiliza PCA y CNN con el fin de preprocesar los datos para crear un nuevo data set, se utilizó optuna encontramos los mejores parámetros del modelo y se usaron técnicas como KNN, naive bayes, svm y xgboost para poder demostrar el rendimiento del modelo, por último se realizó una matriz de confusion y  se tomó el accuracy pues este permite dar un porcentaje de acierto respecto a la realidad, es decir que permite saber cuál fue el porcentaje de atino tuvo el modelo en diagnósticos reales.</p>
+</section>
+<section id="resumen-grafico-del-modelo">
+<h1>Resumen grafico del modelo<a class="headerlink" href="#resumen-grafico-del-modelo" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path1</span><span class="o">=</span><span class="s2">&quot;C:/Users/crist/OneDrive/Escritorio/ProyectoFinall/jbook_ml202330/data/Diapositiva1.PNG&quot;</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">path1</span><span class="o">=</span><span class="s2">&quot;C:/Users/crist/OneDrive/Escritorio/ProyectoFinall/jbook_ml202330/data/Diapositiva1.PNG&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path1</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;Image&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="importacion-de-librerias">
+<h1>Importación de librerías<a class="headerlink" href="#importacion-de-librerias" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
@@ -397,6 +424,8 @@ document.write(`
 <span class="kn">import</span> <span class="nn">optuna</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 </pre></div>
 </div>
 </div>
@@ -427,12 +456,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;0&#39;: &#39;Mild_Demented&#39;,
+ &#39;1&#39;: &#39;Moderate_Demented&#39;,
+ &#39;2&#39;: &#39;Non_Demented&#39;,
+ &#39;3&#39;: &#39;Very_Mild_Demented&#39;}
 </pre></div>
 </div>
 </div>
 </div>
-<p>Al cargar las librerías se puede notar que el data set originalmente se divide en 4 categorías, yendo desde el más leve que es Non dementes al más agresivo que es moderate</p>
+<p>Al cargar las librerías se puede notar que el data set originalmente se divide en 4 categorías, llendo desde el más leve que es Non dementes al más agresivo que es moderate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">[]</span>
@@ -446,8 +478,16 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 Mild_Demented
+1 Moderate_Demented
+2 Non_Demented
+3 Very_Mild_Demented
+</pre></div>
 </div>
-<p>En esta parte se hace un for para realizar un reshape de las imagenes para que tengan una dimension de 128 x 128 o 128 x 128 pixeles y tengan un solo colo, en x se almacena el reshape, mientras que en el y se almacena las etiquetas de las imagenes</p>
+</div>
+</div>
+<p>En esta parte se hace un FOR para realizar un reshape de las imágenes para que tengan una dimensión de 128 x 128 o 128 x 128 pixeles y tengan un solo color, en X se almacena el reshape, mientras que en él y se almacena las etiquetas de las imágenes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">])</span>
@@ -456,11 +496,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Series([], Name: count, dtype: int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>labels
+2         3200
+3         2240
+0          896
+1           64
+Name: count, dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
+<p>Originalmente el dataset con sus 4 categorías se encuentra desbalanceado, esto será cambiado más adelante pues sera reducido en 2 categorias.</p>
 <p>la distribucion de las etiquetas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -470,6 +516,7 @@ document.write(`
 </div>
 </div>
 </div>
+<p>A partir de este punto se utiliza PCA para preprocesar una parte del nuevo dataframe Y reducir sus dimensiones.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_PCA</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span><span class="mi">128</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">X</span><span class="p">]))</span>
@@ -484,7 +531,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>creamos una instancia de PCA con las imágenes y 3 componentes principales, se agrega random state para su reproducibilidad</p>
+<p>creamos una instancia de PCA con las imágenes y 3 componentes principales, se agrega random state para su reproducibilidad.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_projections</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">projections</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;x</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)])</span>
@@ -493,16 +540,100 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="nn">----&gt; 1 df_projections = pd.DataFrame(data=projections, columns=[f&#39;x{i}&#39; for i</span> in <span class="ni">range</span><span class="nt">(1,4)])</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df_projections</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;projections&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x1</th>
+      <th>x2</th>
+      <th>x3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3189.331710</td>
+      <td>1115.094249</td>
+      <td>190.914037</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3016.047018</td>
+      <td>433.588154</td>
+      <td>379.615476</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3712.137280</td>
+      <td>-930.395994</td>
+      <td>1585.156292</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3407.726277</td>
+      <td>-1676.888600</td>
+      <td>1268.490975</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3326.014616</td>
+      <td>1147.149572</td>
+      <td>1820.782440</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6395</th>
+      <td>-2736.844356</td>
+      <td>-724.539704</td>
+      <td>-115.871220</td>
+    </tr>
+    <tr>
+      <th>6396</th>
+      <td>-2350.664192</td>
+      <td>-1152.603625</td>
+      <td>321.430454</td>
+    </tr>
+    <tr>
+      <th>6397</th>
+      <td>-2520.322113</td>
+      <td>-1522.065152</td>
+      <td>-642.202712</td>
+    </tr>
+    <tr>
+      <th>6398</th>
+      <td>-2007.154052</td>
+      <td>624.855286</td>
+      <td>1943.445892</td>
+    </tr>
+    <tr>
+      <th>6399</th>
+      <td>-2540.012340</td>
+      <td>-360.448342</td>
+      <td>818.893822</td>
+    </tr>
+  </tbody>
+</table>
+<p>6400 rows × 3 columns</p>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -646,8 +777,8 @@ document.write(`
 <img alt="_images/235afc0b20b6ee71f6b2f8e336492ac59fdf2c9ba23815a4e0865bcab14cf1a7.png" src="_images/235afc0b20b6ee71f6b2f8e336492ac59fdf2c9ba23815a4e0865bcab14cf1a7.png" />
 </div>
 </div>
-<p>este scaterplot y kdeplot representan visualmente la complejidad de la distribución de imágenes, estos gráficos muestran que la información almacenada en el dataframe mantiene una distribución parecida</p>
-<p>Ahora el objetivo es reducir las dimensiones del dataset, en este caso realizamos la distribución de estas imágenes en 2 dimensiones, en general, se repiten los mismos pasos anteriores para poder lograr la reducción.</p>
+<p>este scaterplot y kdeplot representan visualmente la complejidad de la distribución de imágenes, estos gráficos muestran que la información almacenada en el dataframe mantiene una distribución parecida.</p>
+<p>Ahora, el objetivo es reducir las dimensiones del dataset, en este caso realizamos la distribución de estas imágenes en 2 dimensiones, en general, se repiten los mismos pasos anteriores para poder lograr la reducción..</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_dataset_b</span><span class="p">():</span>
@@ -691,6 +822,7 @@ Name: count, dtype: int64
 </div>
 </div>
 </div>
+<p>en este punto balanceamos el dataset, pasamos de tener 4 categorías a tener 2 que se encuentran balanceadas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">projections</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;x</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)])</span>
@@ -968,7 +1100,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <p>en este punto estamos creando el dataset inicial para la creacion de la red neuronal.</p>
-<p>anteriormente utilizamos PCA para la reducción de dimensiones, en este punto creamos una función utilizamos para probar mediante diferentes parámetros, cuales serían las mejores medidas para la red neuronal</p>
+<p>En este punto creamos una función utilizamos para probar mediante diferentes parámetros, cuales serían las mejores medidas para la red neuronal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_cnn_model</span><span class="p">(</span><span class="n">trial</span><span class="p">):</span>
@@ -1016,7 +1148,7 @@ Name: count, dtype: int64
 </div>
 </div>
 </div>
-<p>empleamoz el entrenamiento de datos</p>
+<p>empleamos el entrenamiento de datos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_data_set</span><span class="p">():</span>
@@ -1041,7 +1173,7 @@ Name: count, dtype: int64
 </div>
 </div>
 </div>
-<p>En el punto anterior se realiza una funcion para crear el conjunto de datos a utilizar, usamos tensorflow para realizar esta tarea, Batch_size tiene un tamaño de 100</p>
+<p>En el punto anterior se realiza una función para crear el conjunto de datos a utilizar, usamos tensor Flow para realizar esta tarea, Batch_size tiene un tamaño de 100, además se crea otra función con el fin de entrenar los datos para el preprocesamiento.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_optimizer</span><span class="p">(</span><span class="n">trial</span><span class="p">):</span>
@@ -1214,7 +1346,7 @@ Epoch 16: early stopping
 <img alt="_images/4fc394d0a4fe4abd6c8bdd85ef4d24590356718ba605b37b4dbd7b8f58374359.png" src="_images/4fc394d0a4fe4abd6c8bdd85ef4d24590356718ba605b37b4dbd7b8f58374359.png" />
 </div>
 </div>
-<p>con este código corremos las funciones definidas anteriormente, en este caso, solamente utilizamos un intento debido al alto gasto computacional que requiere, pero se puede observar que igualmente dio un accuracy bastante alto y nos arrojó igualmente el mejor tamaño de kernel y el learning rate de la red.</p>
+<p>con el codigo anteroror corremos las funciones definidas anteriormente, en este caso, solamente utilizamos un intento debido al alto gasto computacional que requiere, pero se puede observar que igualmente dio un accuracy bastante alto y nos arrojó igualmente el mejor tamaño de kernel y el learning rate de la red.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">best_params</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">best_params</span> 
@@ -1229,7 +1361,10 @@ Epoch 16: early stopping
 </div>
 </div>
 <p>una manera sencilla de visualizar</p>
-<p>Ahora se entrena la red neuronal de CNN utilizando los mejores parametros que escogimos anteriormente</p>
+</section>
+<section id="entrenamiento-de-datos-para-su-preprocesamiento">
+<h1>Entrenamiento de datos para su preprocesamiento<a class="headerlink" href="#entrenamiento-de-datos-para-su-preprocesamiento" title="Permalink to this heading">#</a></h1>
+<p>Ahora se entrena la red neuronal de CNN utilizando los mejores parametros que escogimos anteriormente.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Pretraining_CNN&quot;</span><span class="p">)</span>
@@ -1298,8 +1433,8 @@ _________________________________________________________________
 </div>
 </div>
 </div>
-<p>como se puede observar, se generan este numero de 134,356,418 parametros que son entrenamos</p>
-<p>Particionamos el set de datos en train, val, test</p>
+<p>cómo se puede observar, se generan este número de 134,356,418 parámetros que son entrenados.</p>
+<p>Particionamos el set de datos en train, val, test:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
@@ -1455,10 +1590,11 @@ Epoch 14: early stopping
 </div>
 </div>
 </div>
+<p>ds es como denominamos el nuevo dataset preprocesado creado a partir del entrenamiento utilizado con CNN</p>
 </section>
 <section id="union-del-nuevo-dataset">
 <h1>Union del nuevo Dataset<a class="headerlink" href="#union-del-nuevo-dataset" title="Permalink to this heading">#</a></h1>
-<p>Abajo creamos la union de los nuevos dataset, donde DB1 fue el dataset creado con PCA, mientras que DB2 es el dataset creado con CNN, siendo el nuevo dataset el denominado DB3</p>
+<p>Abajo creamos la unión de los nuevos data set, DB1, siendo esta preprocesada por con CNN y DB2, la cual fue preprocesada con PCA, dando como resultado el nuevo el nuevo data set que vamos a utilizar para los modelos, el denominado DB3.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DB1</span> <span class="o">=</span> <span class="n">intermediate_layer_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
@@ -1484,6 +1620,7 @@ Epoch 14: early stopping
 <img alt="_images/1744b041d32fe7bcef90fdd999942b103a670b5833c207790e78b0012656bade.png" src="_images/1744b041d32fe7bcef90fdd999942b103a670b5833c207790e78b0012656bade.png" />
 </div>
 </div>
+<p>Muestra de una de las imagenes preprocesadas con CNN en DB1</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DB1</span><span class="o">.</span><span class="n">shape</span>
@@ -1596,7 +1733,8 @@ Epoch 14: early stopping
 <img alt="_images/c3ae6c09aeef890356be2f3a270e3fb3f2acd6f7c935882ac740cf4b7b11b118.png" src="_images/c3ae6c09aeef890356be2f3a270e3fb3f2acd6f7c935882ac740cf4b7b11b118.png" />
 </div>
 </div>
-<p>En esta imagen se muestra como quedan distribuido los nuevos dataset con sus dimensiones reducidas, reduciendo la cantidad original de pixeles de 128x128, a 11x11 para un procesamiento mas eficiente</p>
+<p>muestra de una de las imagenes preprocesadas con PCA en DB2</p>
+<p>En estas imagenes se muestra como quedan distribuido los nuevos dataset con sus dimensiones reducidas, reduciendo en gran medida la cantidad de pixeles originales que tenia.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DB3</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">DB1</span><span class="p">,</span><span class="n">DB2</span><span class="p">]))</span>
@@ -4872,13 +5010,14 @@ weighted avg    0.67971   0.67969   0.67968      1280
 </table>
 </div></div></div>
 </div>
-<p>En este caso es interesante notar la manera en la que el tunning afecto el rendimiento de los modelos, pues utilizando los parametros de los algoritmos por defecto KNN tuvo el mejor score general, pero al realizar un tunning de los parametros con grid search se nota que hubo un incremento general de los puntajes de accuracy, siendo en este caso el accuray de 0.99 que se encuentra en SVM el mas alto</p>
+<p>En este caso es interesante notar la manera en la que el tunning afecto el rendimiento de los modelos, pues utilizando los parametros de los algoritmos por defecto, KNN tuvo el mejor accuracy general, pero al realizar un tunning de los parametros con grid search se nota que hubo un incremento general de los puntajes de accuracy, siendo en este caso el accuray de 0.99 que se encuentra en SVM el mas alto, utilizamos el accuracy pues este nos sirve para detectar.</p>
+<p>se tomo el accuracy en vez del Precision pues este primero permite dar un porcentaje de acierto respecto a la realidad, es decir que el atino tuvo un cierto porcentaje de diagnosticos reales.</p>
 <section id="conclusion">
 <h2>CONCLUSIÓN<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
-<p>se realizó la creación de un modelo mixto de tres partes para la detección y clasificación de Alzheimer, utilizando PCA y CNN para la creación y procesamiento de datos para un nuevo dataset que se pueda utilizar el modelo para arreglar el desbalance, después de esto, se aplicaron los nuevos dataset en los 4 modelos presentados donde el mejor rendimiento sin tunear el modelo fue KNN mientras que después de aplicar grid search, se obtuvo un mejor accuracy en svm, obteniendo una precisión bastante alta de KNN, XGBOOST y SVM, no siendo el caso de Naive Bayes, como margen de mejora se tiene que debido a la intensa tarea de preprocesamiento de datos, este algoritmo se realizó en un poco número de intentos para el preprocesamiento de datos pues solamente se realizó un solo intento, por lo cual se recomienda utilizar una mejor capacidad computacional para obtener una mejor precisión a futuro.</p>
+<p>se realizó la creación de un modelo hibrido de tres partes para la detección y clasificación de Alzheimer, utilizando PCA y CNN para la creación y procesamiento de datos para un nuevo dataset que se pueda utilizar en el modelo modelo, después de esto, se aplicaron los nuevos dataset en los 4 modelos presentados donde el mejor rendimiento sin tunear el modelo fue KNN mientras que después de aplicar grid search, se obtuvo un mejor accuracy en svm, obteniendo una precisión bastante alta de KNN, XGBOOST y SVM, no siendo el caso de Naive Bayes, como margen de mejora se tiene que debido a la intensa tarea de preprocesamiento de datos, este algoritmo se realizó en un poco número de intentos para el preprocesamiento de datos pues solamente se realizó un solo intento, por lo cual se recomienda utilizar una mejor capacidad computacional para obtener una mejor precisión a futuro.</p>
 </section>
 <section id="referencias">
-<h2>Referencias:<a class="headerlink" href="#referencias" title="Permalink to this heading">#</a></h2>
+<h2>Referencias<a class="headerlink" href="#referencias" title="Permalink to this heading">#</a></h2>
 <p>-Shen T, Jiang J, Lu J, et al. Predicting Alzheimer Disease From Mild Cognitive Impairment With a Deep Belief Network Based on 18F-FDG-PET Images. Molecular Imaging. 2019;18. doi:10.1177/1536012119877285.
 -Takuya Akiba, Shotaro Sano, Toshihiko Yanase, Takeru Ohta, and Masanori Koyama. 2019. Optuna: A Next-generation Hyperparameter Optimization Framework. In KDD.</p>
 </section>
@@ -4933,9 +5072,12 @@ weighted avg    0.67971   0.67969   0.67968      1280
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modelos mixtos para evaluar la presencia o nivel de Alzheimer en un paciente</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modelos hibridos para evaluar la presencia del Alzheimer en un paciente</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-grafico-del-modelo">Resumen grafico del modelo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importacion-de-librerias">Importación de librerías</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizacion-de-la-red">optimizacion de la red</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento-de-datos-para-su-preprocesamiento">Entrenamiento de datos para su preprocesamiento</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#union-del-nuevo-dataset">Union del nuevo Dataset</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-de-modelos">Aplicacion de modelos</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#svm">SVM</a></li>
@@ -4943,7 +5085,7 @@ weighted avg    0.67971   0.67969   0.67968      1280
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#knn">KNN</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">CONCLUSIÓN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referencias</a></li>
 </ul>
 </li>
 </ul>
