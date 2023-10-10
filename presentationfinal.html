@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Modelos hibridos para evaluar la presencia del Alzheimer en un paciente &#8212; Proyecto Final ML</title>
+    <title>Modelos hibridos de machine learning para predecir Alzheimer &#8212; Proyecto Final ML</title>
   
   
   
@@ -150,7 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Modelos hibridos para evaluar la presencia del Alzheimer en un paciente
+                    Modelos hibridos de machine learning para predecir Alzheimer
                 </a>
             </li>
         </ul>
@@ -336,7 +336,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Modelos hibridos para evaluar la presencia del Alzheimer en un paciente</h1>
+    <h1>Modelos hibridos de machine learning para predecir Alzheimer</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -346,7 +346,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modelos hibridos para evaluar la presencia del Alzheimer en un paciente</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modelos hibridos de machine learning para predecir Alzheimer</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-grafico-del-modelo">Resumen grafico del modelo</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importacion-de-librerias">Importación de librerías</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a></li>
@@ -374,8 +374,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="modelos-hibridos-para-evaluar-la-presencia-del-alzheimer-en-un-paciente">
-<h1>Modelos hibridos para evaluar la presencia del Alzheimer en un paciente<a class="headerlink" href="#modelos-hibridos-para-evaluar-la-presencia-del-alzheimer-en-un-paciente" title="Permalink to this heading">#</a></h1>
+  <section id="modelos-hibridos-de-machine-learning-para-predecir-alzheimer">
+<h1>Modelos hibridos de machine learning para predecir Alzheimer<a class="headerlink" href="#modelos-hibridos-de-machine-learning-para-predecir-alzheimer" title="Permalink to this heading">#</a></h1>
 <p>Presentado por: Cristian Colpas y Daniel Bolivar</p>
 <p>El Alzheimer es una enfermedad es una enfermedad insidiosa y progresiva que afecta funciones sociales, emocionales y pedagógicas en el ser humano, siendo el tipo de demencia senil más común que existe. Debido a que la etiología y la patogénesis del Alzheimer no se han detectado una manera 100% segura de evitarla, por lo cual en cierta medida es hasta necesario y mejor cometer un falso positivo y darse cuenta si una persona no tiene esta enfermedad que no identificar bien el nivel de gravedad de los enfermos pues estos ya padecen de la enfermedad, por ende, es importante su pronta detección para lograr un tratamiento temprano y adecuado en aquellas personas que padecen esta enfermedad. En el siguiente proyecto presentamos un modelo de clasificación con el fin de poder detectar el Alzheimer en aquellas personas que lo padecen o no lo padecen. En este proyecto se utilizó un data set de 6400 muestras, 6400 imágenes de resonancia magnética (IRM) dividida en 4 categorías pero que se convirtió en 2 categorías para que esta se encontrara balanceada, debido a esto se creó un modelo hibrido de tres partes en el cual se utiliza PCA y CNN con el fin de preprocesar los datos para crear un nuevo data set, se utilizó optuna encontramos los mejores parámetros del modelo y se usaron técnicas como KNN, naive bayes, svm y xgboost para poder demostrar el rendimiento del modelo, por último se realizó una matriz de confusion y  se tomó el accuracy pues este permite dar un porcentaje de acierto respecto a la realidad, es decir que permite saber cuál fue el porcentaje de atino tuvo el modelo en diagnósticos reales.</p>
 </section>
@@ -383,21 +383,20 @@ document.write(`
 <h1>Resumen grafico del modelo<a class="headerlink" href="#resumen-grafico-del-modelo" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path1</span><span class="o">=</span><span class="s2">&quot;C:/Users/crist/OneDrive/Escritorio/ProyectoFinall/jbook_ml202330/data/Diapositiva1.PNG&quot;</span>
-<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path1</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">image_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/cristiancolpas1999/image/main/Diapositiva1%20(1).PNG&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">image_url</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to fetch the image. Status code: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">path1</span><span class="o">=</span><span class="s2">&quot;C:/Users/crist/OneDrive/Escritorio/ProyectoFinall/jbook_ml202330/data/Diapositiva1.PNG&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path1</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;Image&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/c33cb0a8bdfcdbe76945ad871a9bfe2b215527cfdbb90be64a0489f87f737627.png" src="_images/c33cb0a8bdfcdbe76945ad871a9bfe2b215527cfdbb90be64a0489f87f737627.png" />
 </div>
 </div>
 </section>
@@ -456,10 +455,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;0&#39;: &#39;Mild_Demented&#39;,
- &#39;1&#39;: &#39;Moderate_Demented&#39;,
- &#39;2&#39;: &#39;Non_Demented&#39;,
- &#39;3&#39;: &#39;Very_Mild_Demented&#39;}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
 </pre></div>
 </div>
 </div>
@@ -478,14 +474,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 Mild_Demented
-1 Moderate_Demented
-2 Non_Demented
-3 Very_Mild_Demented
-</pre></div>
-</div>
-</div>
 </div>
 <p>En esta parte se hace un FOR para realizar un reshape de las imágenes para que tengan una dimensión de 128 x 128 o 128 x 128 pixeles y tengan un solo color, en X se almacena el reshape, mientras que en él y se almacena las etiquetas de las imágenes.</p>
 <div class="cell docutils container">
@@ -496,12 +484,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>labels
-2         3200
-3         2240
-0          896
-1           64
-Name: count, dtype: int64
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Series([], Name: count, dtype: int64)
 </pre></div>
 </div>
 </div>
@@ -540,100 +523,16 @@ Name: count, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="nn">----&gt; 1 df_projections = pd.DataFrame(data=projections, columns=[f&#39;x{i}&#39; for i</span> in <span class="ni">range</span><span class="nt">(1,4)])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df_projections</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>x1</th>
-      <th>x2</th>
-      <th>x3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>3189.331710</td>
-      <td>1115.094249</td>
-      <td>190.914037</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3016.047018</td>
-      <td>433.588154</td>
-      <td>379.615476</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3712.137280</td>
-      <td>-930.395994</td>
-      <td>1585.156292</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3407.726277</td>
-      <td>-1676.888600</td>
-      <td>1268.490975</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>3326.014616</td>
-      <td>1147.149572</td>
-      <td>1820.782440</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>6395</th>
-      <td>-2736.844356</td>
-      <td>-724.539704</td>
-      <td>-115.871220</td>
-    </tr>
-    <tr>
-      <th>6396</th>
-      <td>-2350.664192</td>
-      <td>-1152.603625</td>
-      <td>321.430454</td>
-    </tr>
-    <tr>
-      <th>6397</th>
-      <td>-2520.322113</td>
-      <td>-1522.065152</td>
-      <td>-642.202712</td>
-    </tr>
-    <tr>
-      <th>6398</th>
-      <td>-2007.154052</td>
-      <td>624.855286</td>
-      <td>1943.445892</td>
-    </tr>
-    <tr>
-      <th>6399</th>
-      <td>-2540.012340</td>
-      <td>-360.448342</td>
-      <td>818.893822</td>
-    </tr>
-  </tbody>
-</table>
-<p>6400 rows × 3 columns</p>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;projections&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5014,7 +4913,7 @@ weighted avg    0.67971   0.67969   0.67968      1280
 <p>se tomo el accuracy en vez del Precision pues este primero permite dar un porcentaje de acierto respecto a la realidad, es decir que el atino tuvo un cierto porcentaje de diagnosticos reales.</p>
 <section id="conclusion">
 <h2>CONCLUSIÓN<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
-<p>se realizó la creación de un modelo hibrido de tres partes para la detección y clasificación de Alzheimer, utilizando PCA y CNN para la creación y procesamiento de datos para un nuevo dataset que se pueda utilizar en el modelo modelo, después de esto, se aplicaron los nuevos dataset en los 4 modelos presentados donde el mejor rendimiento sin tunear el modelo fue KNN mientras que después de aplicar grid search, se obtuvo un mejor accuracy en svm, obteniendo una precisión bastante alta de KNN, XGBOOST y SVM, no siendo el caso de Naive Bayes, como margen de mejora se tiene que debido a la intensa tarea de preprocesamiento de datos, este algoritmo se realizó en un poco número de intentos para el preprocesamiento de datos pues solamente se realizó un solo intento, por lo cual se recomienda utilizar una mejor capacidad computacional para obtener una mejor precisión a futuro.</p>
+<p>se realizó la creación de un modelo hibrido de tres partes para la detección y clasificación de Alzheimer, utilizando PCA y CNN para el procesamiento de datos con el fin de que el dataset pueda ser utilizado en el modelo, después de esto, se utilizó el dataset procesado en los 4 modelos presentados donde se obtuvo el mejor rendimiento sin tunear en el modelo de KNN, donde después de aplicar grid search, se obtuvo un mejor accuracy en SVM, obteniendo una precisión bastante alta de KNN, XGBOOST y SVM, no siendo el caso de Naive Bayes, como margen de mejora se tiene que debido a la intensa tarea de preprocesamiento de datos, este algoritmo se realizó en un poco número de intentos para el preprocesamiento de datos pues solamente se realizó un solo intento, por lo cual se recomienda utilizar una mejor capacidad computacional para obtener una mejor precisión a futuro.</p>
 </section>
 <section id="referencias">
 <h2>Referencias<a class="headerlink" href="#referencias" title="Permalink to this heading">#</a></h2>
@@ -5072,7 +4971,7 @@ weighted avg    0.67971   0.67969   0.67968      1280
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modelos hibridos para evaluar la presencia del Alzheimer en un paciente</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Modelos hibridos de machine learning para predecir Alzheimer</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen-grafico-del-modelo">Resumen grafico del modelo</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importacion-de-librerias">Importación de librerías</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a></li>
